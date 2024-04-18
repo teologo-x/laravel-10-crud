@@ -18,7 +18,16 @@ use App\Http\Controllers\StudentController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('products', ProductController::class);
 
-Route::resource('estudiantes', StudentController::class,'index');
+//Route::resource('products', ProductController::class);
 
+Route::resource('estudiantes', StudentController::class);
+
+
+//Route::get('/products', [ProductController::class, 'detail']);
+
+Route::post('insertProducts',[ProductController::class,'insertProduct']);
+
+//ruta get que pasa un ID y que el postman lo muestre en tipo JSON
+
+Route::get('jasonvor',[ProductController::class,'mostrarJson']);
