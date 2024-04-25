@@ -19,12 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::resource('products', ProductController::class);
+Route::resource('products', ProductController::class);
 
 Route::resource('estudiantes', StudentController::class);
 
 
-//Route::get('/products', [ProductController::class, 'detail']);
+//Route::get('/products', [ProductController::class, 'index']);
 
 Route::post('insertProducts',[ProductController::class,'insertProduct']);
 

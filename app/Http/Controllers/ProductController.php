@@ -16,10 +16,10 @@ class ProductController extends Controller
     public function index() 
     {
         $products = Product::all();
-        return $products;
-        //return view('products.index', [
-        //    'products' => Product::latest()->paginate(3)
-        //]);
+        //return $products;
+        return view('products.index', [
+            'products' => Product::latest()->paginate(3)
+        ]);
     }
 
     public function detail(){

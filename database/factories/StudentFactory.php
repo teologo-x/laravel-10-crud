@@ -20,6 +20,7 @@ class StudentFactory extends Factory
             'dni' => fake()->numberBetween(20000000,65999999),
             'first_name' => fake()->firstName(),
             'last_name' => fake()->lastName(),
+            'assists' => fake()->numberBetween(0,0),
         ];
     }
 }
