@@ -13,12 +13,27 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() : View
+    public function index() 
     {
+        $products = Product::all();
+        //return $products;
         return view('products.index', [
             'products' => Product::latest()->paginate(3)
         ]);
     }
+
+    public function detail(){
+        return('details');
+    }
+
+    public function mostrarJson(){
+        $products = Product::all();
+        return response()->json($products);
+    }
+
+    public function insertProduct(){
+        return('producto');
+    } 
 
     /**
      * Show the form for creating a new resource.
