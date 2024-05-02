@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('birthday');
             $table->string('group');
             
+
         });
     }
 

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Http\Controllers\StudentController;
 
 return new class extends Migration
 {
@@ -11,13 +12,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('students', function (Blueprint $table) {
-            $table->integer('dni');
-            $table->string('first_name');
-            $table->string('last_name');
+        Schema::create('assists', function (Blueprint $table) {
             $table->id();
-            $table->integer('assists');
             $table->timestamps();
+            
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students');
+            
+
+            
             
         });
     }
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('students');
+        Schema::dropIfExists('assists');
     }
 };
